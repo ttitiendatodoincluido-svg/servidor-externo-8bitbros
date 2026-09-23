@@ -1,0 +1,85 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Codigo/panel_servidor_externo.gd" id="1_pse001"]
+
+[node name="PanelServidorExterno" type="VBoxContainer"]
+theme_override_constants/separation = 10
+script = ExtResource("1_pse001")
+
+[node name="EtiquetaTitulo" type="Label" parent="."]
+layout_mode = 2
+text = "Servidor externo (Internet)"
+
+[node name="EtiquetaAyuda" type="Label" parent="."]
+layout_mode = 2
+autowrap_mode = 2
+text = "Para jugar con alguien que NO está en tu misma red WiFi. Necesitan la misma dirección de servidor (ya viene puesta por defecto) y el mismo código de sala."
+
+[node name="CampoServidor" type="LineEdit" parent="."]
+layout_mode = 2
+placeholder_text = "Dirección del servidor (wss://...)"
+
+[node name="FilaCrear" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="EtiquetaCrear" type="Label" parent="FilaCrear"]
+layout_mode = 2
+text = "Crear sala:"
+
+[node name="SelectorJugadores" type="SpinBox" parent="FilaCrear"]
+layout_mode = 2
+tooltip_text = "Cantidad máxima de jugadores"
+min_value = 2.0
+max_value = 10.0
+value = 4.0
+
+[node name="CampoCodigoCrear" type="LineEdit" parent="FilaCrear"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Código (opcional)"
+
+[node name="BotonCrear" type="Button" parent="FilaCrear"]
+layout_mode = 2
+focus_mode = 0
+text = "Crear sala"
+
+[node name="FilaUnirse" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="EtiquetaUnirse" type="Label" parent="FilaUnirse"]
+layout_mode = 2
+text = "Unirse a sala:"
+
+[node name="CampoCodigoUnirse" type="LineEdit" parent="FilaUnirse"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Código de sala (ej: EJ250)"
+
+[node name="BotonUnirse" type="Button" parent="FilaUnirse"]
+layout_mode = 2
+focus_mode = 0
+text = "Unirse"
+
+[node name="EtiquetaCodigo" type="Label" parent="."]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.2, 1)
+
+[node name="SelectorMapa" type="OptionButton" parent="."]
+visible = false
+layout_mode = 2
+focus_mode = 0
+
+[node name="BotonEmpezar" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_mode = 0
+text = "Empezar carrera"
+
+[node name="EtiquetaEstado" type="Label" parent="."]
+layout_mode = 2
+autowrap_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.85, 1, 1)

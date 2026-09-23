@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://b1spumoppwsw5"]
+
+[ext_resource type="Script" uid="uid://b1uh6174r0u0o" path="res://Codigo/hud_portada.gd" id="1_k4fmt"]
+[ext_resource type="AudioStream" uid="uid://cftlc8f31riym" path="res://Recursos/sounds/muelle.wav" id="3_0lnib"]
+[ext_resource type="FontFile" uid="uid://do5gturvymf4s" path="res://Recursos/fonts/Blox2.ttf" id="4_gnafu"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="4_nkhol"]
+[ext_resource type="Theme" uid="uid://dhh7bdv3peqv3" path="res://Recursos/ui/tema.tres" id="5_8mil7"]
+[ext_resource type="Shader" uid="uid://4qgsa2u3gc64" path="res://Materiales/material_powerup.tres" id="7_js8xm"]
+[ext_resource type="FontFile" uid="uid://howsld5hrex3" path="res://Recursos/fonts/El Chavo Font.ttf" id="9_bty1x"]
+[ext_resource type="Texture2D" uid="uid://btsln0te447r0" path="res://Recursos/tratamiento.png" id="9_camju"]
+[ext_resource type="Texture2D" uid="uid://cbq4vpsiokypb" path="res://Recursos/terminos.png" id="10_bty1x"]
+[ext_resource type="Texture2D" uid="uid://dh16g8i3fdry1" path="res://Messages2_22718.png" id="10_camju"]
+[ext_resource type="Texture2D" uid="uid://dutbqnpl1sq03" path="res://Recursos/logo_2022_final.png" id="11_bty1x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ow2as"]
+shader = ExtResource("7_js8xm")
+shader_parameter/Color = Color(1, 1, 0, 1)
+shader_parameter/Velocidad = 20.0
+
+[node name="HUD_Portada" type="CanvasLayer" unique_id=2085758254]
+script = ExtResource("1_k4fmt")
+
+[node name="SonidoMuelle" type="AudioStreamPlayer" parent="." unique_id=232508184]
+stream = ExtResource("3_0lnib")
+bus = &"Efectos de Sonido"
+
+[node name="Label2" type="Label" parent="." unique_id=1824526757]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 27.0
+offset_right = 358.0
+offset_bottom = 107.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("4_nkhol")
+theme_override_font_sizes/font_size = 80
+text = "8-Bit Bros"
+
+[node name="Label3" type="Label" parent="." unique_id=403707580]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -561.0
+offset_top = 150.0
+offset_right = 970.0
+offset_bottom = 653.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("4_gnafu")
+theme_override_font_sizes/font_size = 30
+text = "Acerca de 8-Bit Bros
+CREADOR: MATIAS CABALLERO BENAVIDES
+VERSIÓN 1.3.1
+MÚSICA DE META TOMADA DE: Jingle_Win00.wav by 
+LittleRobotSoundFactoryhttps://freesound.org/s/273033/ 
+-- License: Attribution 4.0
+TEXTURAS Y MÚSICA DE FONDO TOMADA DE: Brackeys Platformer Assets
+Link de descarga: https://brackeysgames.itch.io/brackeys-platformer-bundle
+AL TOMAR ALGÚN CONTENIDO DE 8-Bit Bros 
+¡PUEDE SER DEMANDADO POR VIOLAR LOS DERECHOS DE AUTOR!
+
+"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1074078082]
+offset_left = 36.0
+offset_top = 44.5
+offset_right = 70.0
+offset_bottom = 84.5
+theme_override_constants/separation = 5
+
+[node name="BotonSalidaRedes" type="Button" parent="VBoxContainer2" unique_id=1688864749]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_8mil7")
+text = "<"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1505257260]
+position = Vector2(814, 132)
+
+[node name="Terminosdeuso" type="TextureButton" parent="Node2D" unique_id=890005303]
+offset_left = 2.0
+offset_top = 73.0
+offset_right = 317.58203
+offset_bottom = 139.0
+texture_normal = ExtResource("10_bty1x")
+texture_pressed = ExtResource("10_bty1x")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BotonInforRela" type="Button" parent="Node2D" unique_id=1961812871]
+custom_minimum_size = Vector2(0, 40)
+offset_left = -11.0
+offset_top = 150.0
+offset_right = 327.0
+offset_bottom = 205.0
+focus_mode = 0
+theme = ExtResource("5_8mil7")
+theme_override_fonts/font = ExtResource("9_bty1x")
+theme_override_font_sizes/font_size = 20
+text = " INFORMACIÓN RELACIONADA "
+
+[node name="Politica" type="TextureButton" parent="Node2D" unique_id=233340483]
+offset_right = 316.77734
+offset_bottom = 60.0
+texture_normal = ExtResource("9_camju")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=257812002]
+position = Vector2(294, 612)
+
+[node name="Derechos" type="Label" parent="Node2D2" unique_id=542514338]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 128.0
+offset_top = -12.0
+offset_right = 648.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("4_nkhol")
+theme_override_font_sizes/font_size = 16
+text = "© SAMURÁI GAMER 2025-2026
+TODOS LOS DERECHOS RESERVADOS"
+horizontal_alignment = 1
+
+[node name="Comentarios_e" type="Label" parent="Node2D2" unique_id=544853562]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -289.0
+offset_right = -3.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("4_nkhol")
+theme_override_font_sizes/font_size = 16
+text = "ENVIAR COMENTARIOS:"
+
+[node name="Comentarios" type="TextureButton" parent="Node2D2" unique_id=33752293]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 63.0
+offset_bottom = 38.0
+texture_normal = ExtResource("10_camju")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label4" type="Label" parent="Node2D2" unique_id=1331750042]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 738.0
+offset_top = 5.0
+offset_right = 846.0
+offset_bottom = 21.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("4_nkhol")
+theme_override_font_sizes/font_size = 16
+text = "V. 1.3.1"
+
+[node name="Label11" type="Label" parent="." unique_id=696942209]
+material = SubResource("ShaderMaterial_ow2as")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -236.0
+offset_top = 112.0
+offset_right = 219.0
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.47, 0.007833326, 1)
+theme_override_fonts/font = ExtResource("9_bty1x")
+theme_override_font_sizes/font_size = 40
+text = "THE                UPDATE"
+
+[node name="Logo2022Final2" type="Sprite2D" parent="Label11" unique_id=1122081072]
+position = Vector2(181.99998, 21.999996)
+scale = Vector2(0.3355558, 0.3355558)
+texture = ExtResource("11_bty1x")
+region_enabled = true
+region_rect = Rect2(200, 96, 552, 88)
+
+[connection signal="pressed" from="VBoxContainer2/BotonSalidaRedes" to="." method="_on_boton_salida_redes_pressed"]
+[connection signal="pressed" from="Node2D/Terminosdeuso" to="." method="_on_terminosdeuso_pressed"]
+[connection signal="pressed" from="Node2D/BotonInforRela" to="." method="_on_boton_infor_rela_pressed"]
+[connection signal="pressed" from="Node2D/Politica" to="." method="_on_politica_pressed"]
+[connection signal="pressed" from="Node2D2/Comentarios" to="." method="_on_comentarios_pressed"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://gjeyl1vix1fv"]
+
+[ext_resource type="Texture2D" uid="uid://cqngf2ymtc3ul" path="res://Recursos/sprites/world_tileset.png" id="1_sfk27"]
+[ext_resource type="Script" uid="uid://cjg7qgk88on2" path="res://Codigo/punto_de_control.gd" id="2_w5buc"]
+[ext_resource type="AudioStream" uid="uid://qb2kmlyb7p50" path="res://Recursos/sounds/puntocontrol.wav" id="3_3ms0k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5buc"]
+size = Vector2(12, 13)
+
+[node name="PuntoDeControl" type="Sprite2D"]
+texture = ExtResource("1_sfk27")
+region_enabled = true
+region_rect = Rect2(129, 66, 14, 14)
+script = ExtResource("2_w5buc")
+tinte_desactivado = Color(0.309804, 0.309804, 0.309804, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_w5buc")
+
+[node name="SonidoPuntoDeControl" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3ms0k")
+bus = &"Efectos de Sonido"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

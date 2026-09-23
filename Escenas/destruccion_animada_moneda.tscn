@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://da3mwjfrhl0te"]
+
+[ext_resource type="Script" uid="uid://b4t2w52pwf487" path="res://Codigo/destruccion_animada_moneda.gd" id="1_4jljj"]
+
+[node name="DestruccionAnimadaMoneda" type="Node"]
+script = ExtResource("1_4jljj")
+distancia_a_recorrer = 30.0

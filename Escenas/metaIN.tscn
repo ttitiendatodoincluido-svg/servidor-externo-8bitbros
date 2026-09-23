@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bnj3vx0tjwrdw"]
+
+[ext_resource type="Texture2D" uid="uid://65v018kkn4t5" path="res://Recursos/sprites/Meta.png" id="1_ca1gi"]
+[ext_resource type="Script" uid="uid://cr462ewda0vcq" path="res://Codigo/meta.gd" id="2_l4r44"]
+[ext_resource type="AudioStream" uid="uid://d0fql8ycbsov8" path="res://Recursos/music/meta.wav" id="3_hfc7h"]
+[ext_resource type="AudioStream" uid="uid://dokgccudxgnxn" path="res://Recursos/music/time_for_adventure.mp3" id="4_eevua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4r44"]
+size = Vector2(16, 16)
+
+[node name="Meta" type="Sprite2D" unique_id=1451639589]
+texture = ExtResource("1_ca1gi")
+script = ExtResource("2_l4r44")
+musica_final = ExtResource("3_hfc7h")
+musica_nivel = ExtResource("4_eevua")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2081015995]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=138578353]
+shape = SubResource("RectangleShape2D_l4r44")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://dcb7y07ucappt"]
+
+[ext_resource type="Script" uid="uid://b1uh6174r0u0o" path="res://Codigo/hud_portada.gd" id="1_bjsei"]
+[ext_resource type="AudioStream" uid="uid://cftlc8f31riym" path="res://Recursos/sounds/muelle.wav" id="2_m5g7i"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="3_t6yw5"]
+[ext_resource type="Theme" uid="uid://dhh7bdv3peqv3" path="res://Recursos/ui/tema.tres" id="4_hvl27"]
+[ext_resource type="FontFile" uid="uid://dn58w55njsxog" path="res://Recursos/fonts/Ttangs Budae Jjigae Light.otf" id="5_t6yw5"]
+[ext_resource type="Texture2D" uid="uid://dh16g8i3fdry1" path="res://Messages2_22718.png" id="6_7rxrn"]
+[ext_resource type="FontFile" uid="uid://ofseoq86x8ei" path="res://Recursos/fonts/Ttangs Budae Jjigae Bold.otf" id="6_hvl27"]
+[ext_resource type="Shader" uid="uid://4qgsa2u3gc64" path="res://Materiales/material_powerup.tres" id="7_dj7gv"]
+[ext_resource type="FontFile" uid="uid://howsld5hrex3" path="res://Recursos/fonts/El Chavo Font.ttf" id="8_dvloc"]
+[ext_resource type="Texture2D" uid="uid://dutbqnpl1sq03" path="res://Recursos/logo_2022_final.png" id="10_fsyrj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7rxrn"]
+shader = ExtResource("7_dj7gv")
+shader_parameter/Color = Color(1, 1, 0, 1)
+shader_parameter/Velocidad = 20.0
+
+[node name="HUD_Portada" type="CanvasLayer" unique_id=459904110]
+script = ExtResource("1_bjsei")
+
+[node name="SonidoMuelle" type="AudioStreamPlayer" parent="." unique_id=1098241451]
+stream = ExtResource("2_m5g7i")
+bus = &"Efectos de Sonido"
+
+[node name="Label2" type="Label" parent="." unique_id=1310453112]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 37.0
+offset_right = 358.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_t6yw5")
+theme_override_font_sizes/font_size = 80
+text = "8-Bit Bros"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=2130357431]
+offset_left = 36.0
+offset_top = 44.5
+offset_right = 70.0
+offset_bottom = 84.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="BotonSalidaKO" type="Button" parent="VBoxContainer2" unique_id=1661668063]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_hvl27")
+text = "<"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=667547554]
+offset_left = 463.0
+offset_top = 261.0
+offset_right = 690.0
+offset_bottom = 436.0
+theme_override_constants/separation = 5
+
+[node name="Boton1KO" type="Button" parent="VBoxContainer3" unique_id=1320742117]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_hvl27")
+text = "1"
+
+[node name="Boton2KO" type="Button" parent="VBoxContainer3" unique_id=329434992]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_hvl27")
+text = "2"
+
+[node name="Boton3KO" type="Button" parent="VBoxContainer3" unique_id=1058305845]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_hvl27")
+text = "3"
+
+[node name="BotonFrances2" type="Button" parent="VBoxContainer3" unique_id=773470960]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_hvl27")
+theme_override_fonts/font = ExtResource("5_t6yw5")
+text = "곧 찾아옵니다!"
+
+[node name="Label5" type="Label" parent="." unique_id=745312802]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -165.0
+offset_right = 381.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_hvl27")
+theme_override_font_sizes/font_size = 30
+text = "레벨
+(처음이면 1레벨부터 시작해요)"
+horizontal_alignment = 1
+
+[node name="Nombre_Version" type="Label" parent="." unique_id=1566794338]
+material = SubResource("ShaderMaterial_7rxrn")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -236.0
+offset_top = 119.0
+offset_right = 219.0
+offset_bottom = 168.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.47, 0.007833326, 1)
+theme_override_fonts/font = ExtResource("8_dvloc")
+theme_override_font_sizes/font_size = 40
+text = "THE                UPDATE"
+
+[node name="Logo2022Final2" type="Sprite2D" parent="Nombre_Version" unique_id=1523382120]
+position = Vector2(181.99998, 21.999996)
+scale = Vector2(0.3355558, 0.3355558)
+texture = ExtResource("10_fsyrj")
+region_enabled = true
+region_rect = Rect2(200, 96, 552, 88)
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=1295329216]
+position = Vector2(294, 612)
+
+[node name="E_comentarios" type="Label" parent="Node2D2" unique_id=1625010314]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -284.0
+offset_top = -9.0
+offset_right = 2.0
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_hvl27")
+theme_override_font_sizes/font_size = 25
+text = "댓글 보내기:"
+
+[node name="ComentariosKO" type="TextureButton" parent="Node2D2" unique_id=104942758]
+offset_left = -128.0
+offset_top = -26.0
+offset_right = -69.0
+offset_bottom = 33.0
+texture_normal = ExtResource("6_7rxrn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Versión" type="Label" parent="Node2D2" unique_id=1220651255]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 717.0
+offset_top = -3.0
+offset_right = 847.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_hvl27")
+theme_override_font_sizes/font_size = 25
+text = "버전 1.3.1"
+
+[connection signal="pressed" from="VBoxContainer2/BotonSalidaKO" to="." method="_on_boton_salida_ko_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Boton1KO" to="." method="_on_boton_1ko_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Boton2KO" to="." method="_on_boton_2ko_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Boton3KO" to="." method="_on_boton_3ko_pressed"]
+[connection signal="pressed" from="Node2D2/ComentariosKO" to="." method="_on_comentarios_ko_pressed"]

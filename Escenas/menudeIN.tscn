@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://b21xjmbvmikrr"]
+
+[ext_resource type="Script" uid="uid://b1uh6174r0u0o" path="res://Codigo/hud_portada.gd" id="1_you2f"]
+[ext_resource type="AudioStream" uid="uid://cftlc8f31riym" path="res://Recursos/sounds/muelle.wav" id="2_u044c"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="3_rwjir"]
+[ext_resource type="Theme" uid="uid://dhh7bdv3peqv3" path="res://Recursos/ui/tema.tres" id="4_cdlso"]
+[ext_resource type="FontFile" uid="uid://bcm63kbqxois2" path="res://Recursos/fonts/R2-D2.otf" id="5_u044c"]
+[ext_resource type="Shader" uid="uid://4qgsa2u3gc64" path="res://Materiales/material_powerup.tres" id="6_uwd5o"]
+[ext_resource type="Texture2D" uid="uid://dh16g8i3fdry1" path="res://Messages2_22718.png" id="7_you2f"]
+[ext_resource type="FontFile" uid="uid://howsld5hrex3" path="res://Recursos/fonts/El Chavo Font.ttf" id="8_u044c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rwjir"]
+shader = ExtResource("6_uwd5o")
+shader_parameter/Color = Color(1, 1, 0, 1)
+shader_parameter/Velocidad = 20.0
+
+[node name="HUD_Portada" type="CanvasLayer" unique_id=459904110]
+script = ExtResource("1_you2f")
+
+[node name="SonidoMuelle" type="AudioStreamPlayer" parent="." unique_id=1098241451]
+stream = ExtResource("2_u044c")
+bus = &"Efectos de Sonido"
+
+[node name="Label2" type="Label" parent="." unique_id=1310453112]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 37.0
+offset_right = 358.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_rwjir")
+theme_override_font_sizes/font_size = 80
+text = "8-Bit Bros"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=2130357431]
+offset_left = 36.0
+offset_top = 44.5
+offset_right = 70.0
+offset_bottom = 84.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="BotonExitEn" type="Button" parent="VBoxContainer2" unique_id=1661668063]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_cdlso")
+text = "<"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=1062562360]
+offset_left = 463.0
+offset_top = 261.0
+offset_right = 690.0
+offset_bottom = 436.0
+theme_override_constants/separation = 5
+
+[node name="BotonL1" type="Button" parent="VBoxContainer3" unique_id=1681559291]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_cdlso")
+text = "1"
+
+[node name="BotonL2" type="Button" parent="VBoxContainer3" unique_id=1833724287]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_cdlso")
+text = "2"
+
+[node name="BotonL3" type="Button" parent="VBoxContainer3" unique_id=1885059299]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_cdlso")
+text = "3"
+
+[node name="BotonFrances2" type="Button" parent="VBoxContainer3" unique_id=213341472]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_cdlso")
+text = "Coming Soon!"
+
+[node name="Label5" type="Label" parent="." unique_id=745312802]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -159.0
+offset_right = 381.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("5_u044c")
+theme_override_font_sizes/font_size = 50
+text = "LEVELS
+(IF YOU ARE NEW, START WITH LEVEL 1)"
+horizontal_alignment = 1
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=627055955]
+position = Vector2(294, 612)
+
+[node name="Label5" type="Label" parent="Node2D2" unique_id=1827915248]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -289.0
+offset_right = -3.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_rwjir")
+theme_override_font_sizes/font_size = 16
+text = "SEND FEEDBACK:"
+
+[node name="Comentarios" type="TextureButton" parent="Node2D2" unique_id=1029108277]
+offset_left = -68.0
+offset_top = -21.0
+offset_right = -9.0
+offset_bottom = 38.0
+texture_normal = ExtResource("7_you2f")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label10" type="Label" parent="." unique_id=59977941]
+material = SubResource("ShaderMaterial_rwjir")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -198.0
+offset_top = 123.0
+offset_right = 200.0
+offset_bottom = 172.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.47, 0.007833326, 1)
+theme_override_fonts/font = ExtResource("8_u044c")
+theme_override_font_sizes/font_size = 30
+text = "THE SOLUTIONS UPDATE"
+
+[node name="N_Version" type="Label" parent="." unique_id=137495568]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 455.0
+offset_top = 619.0
+offset_right = 563.0
+offset_bottom = 635.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_rwjir")
+theme_override_font_sizes/font_size = 16
+text = "V. 1.3.1"
+
+[connection signal="pressed" from="VBoxContainer2/BotonExitEn" to="." method="_on_boton_exit_en_pressed"]
+[connection signal="pressed" from="VBoxContainer3/BotonL1" to="." method="_on_boton_l_1_pressed"]
+[connection signal="pressed" from="VBoxContainer3/BotonL2" to="." method="_on_boton_l_2_pressed"]
+[connection signal="pressed" from="VBoxContainer3/BotonL3" to="." method="_on_boton_l_3_pressed"]

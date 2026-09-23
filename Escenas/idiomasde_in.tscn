@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://ck1md4en3bn08"]
+
+[ext_resource type="Script" uid="uid://b1uh6174r0u0o" path="res://Codigo/hud_portada.gd" id="1_3gkrg"]
+[ext_resource type="AudioStream" uid="uid://cftlc8f31riym" path="res://Recursos/sounds/muelle.wav" id="2_gv0ey"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="3_fglqc"]
+[ext_resource type="Theme" uid="uid://dhh7bdv3peqv3" path="res://Recursos/ui/tema.tres" id="4_wtbo3"]
+[ext_resource type="Texture2D" uid="uid://ck51w1eh373my" path="res://Recursos/redes_sociales/youtube.webp" id="5_gv0ey"]
+[ext_resource type="Shader" uid="uid://4qgsa2u3gc64" path="res://Materiales/material_powerup.tres" id="6_wtbo3"]
+[ext_resource type="FontFile" uid="uid://howsld5hrex3" path="res://Recursos/fonts/El Chavo Font.ttf" id="7_wtbo3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jbrmw"]
+shader = ExtResource("6_wtbo3")
+shader_parameter/Color = Color(1, 1, 0, 1)
+shader_parameter/Velocidad = 20.0
+
+[node name="HUD_Portada" type="CanvasLayer" unique_id=1148745683]
+script = ExtResource("1_3gkrg")
+
+[node name="SonidoMuelle" type="AudioStreamPlayer" parent="." unique_id=1766719546]
+stream = ExtResource("2_gv0ey")
+bus = &"Efectos de Sonido"
+
+[node name="Label2" type="Label" parent="." unique_id=374547899]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 37.0
+offset_right = 358.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_fglqc")
+theme_override_font_sizes/font_size = 80
+text = "8-Bit Bros"
+
+[node name="Label4" type="Label" parent="." unique_id=1509079662]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 108.0
+offset_top = 579.0
+offset_right = 588.0
+offset_bottom = 633.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_fglqc")
+theme_override_font_sizes/font_size = 16
+text = "©SAMURAI GAMER 2025-2026
+TODOS LOS DERECHOS RESERVADOS
+ALL RIGHTS RESERVED VERSION 1.3"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1923267024]
+offset_left = 36.0
+offset_top = 44.5
+offset_right = 70.0
+offset_bottom = 84.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="BotonExitLanguage" type="Button" parent="VBoxContainer2" unique_id=1935240705]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_wtbo3")
+text = "<"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=575335668]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -20.0
+offset_right = 114.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="BotonEspanol" type="Button" parent="VBoxContainer" unique_id=742440056]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_wtbo3")
+text = "Español"
+
+[node name="BotonIngles" type="Button" parent="VBoxContainer" unique_id=1114902092]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_wtbo3")
+text = "English"
+
+[node name="BotonFrances" type="Button" parent="VBoxContainer" unique_id=1098889633]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_wtbo3")
+text = "Coming soon!"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1220454098]
+position = Vector2(294, 612)
+
+[node name="Youtube" type="TextureButton" parent="Node2D" unique_id=1862673060]
+offset_left = -60.0
+offset_top = -20.0
+offset_right = -1.0
+offset_bottom = 39.0
+texture_normal = ExtResource("5_gv0ey")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label6" type="Label" parent="Node2D" unique_id=1922227600]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 224.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_fglqc")
+theme_override_font_sizes/font_size = 16
+text = "Youtube"
+
+[node name="Label5" type="Label" parent="Node2D" unique_id=740631227]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -288.0
+offset_right = -64.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_fglqc")
+theme_override_font_sizes/font_size = 16
+text = "SOCIAL MEDIA:"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=1797038945]
+material = SubResource("ShaderMaterial_jbrmw")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_top = 118.0
+offset_right = 265.0
+offset_bottom = 167.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.47, 0.007833326, 1)
+theme_override_fonts/font = ExtResource("7_wtbo3")
+theme_override_font_sizes/font_size = 40
+text = "THE SOLUTIONS UPDATE"
+
+[connection signal="pressed" from="VBoxContainer2/BotonExitLanguage" to="." method="_on_boton_exit_language_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonEspanol" to="." method="_on_boton_espanol_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonIngles" to="." method="_on_boton_ingles_pressed"]

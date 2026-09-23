@@ -1,0 +1,268 @@
+[gd_scene format=3 uid="uid://d3188eb3essbg"]
+
+[ext_resource type="Script" uid="uid://b1uh6174r0u0o" path="res://Codigo/hud_portada.gd" id="1_vu8cs"]
+[ext_resource type="Theme" uid="uid://dhh7bdv3peqv3" path="res://Recursos/ui/tema.tres" id="1_we4ap"]
+[ext_resource type="AudioStream" uid="uid://cftlc8f31riym" path="res://Recursos/sounds/muelle.wav" id="3_ia2u3"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="4_lka6y"]
+[ext_resource type="Texture2D" uid="uid://dh16g8i3fdry1" path="res://Messages2_22718.png" id="5_u4ixw"]
+[ext_resource type="Shader" uid="uid://4qgsa2u3gc64" path="res://Materiales/material_powerup.tres" id="6_u4ixw"]
+[ext_resource type="FontFile" uid="uid://howsld5hrex3" path="res://Recursos/fonts/El Chavo Font.ttf" id="7_u4ixw"]
+[ext_resource type="FontFile" uid="uid://bcm63kbqxois2" path="res://Recursos/fonts/R2-D2.otf" id="8_cwy3e"]
+[ext_resource type="Texture2D" uid="uid://dutbqnpl1sq03" path="res://Recursos/logo_2022_final.png" id="8_q18ci"]
+[ext_resource type="Texture2D" uid="uid://by61y27tqst8s" path="res://Recursos/pen.png" id="10_sabfg"]
+[ext_resource type="PackedScene" uid="uid://k5sutax4lw6a" path="res://Escenas/panel_notificaciones.tscn" id="11_not001"]
+
+[sub_resource type="GDScript" id="GDScript_861ri"]
+script/source = "extends LineEdit
+pass
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sabfg"]
+shader = ExtResource("6_u4ixw")
+shader_parameter/Color = Color(1, 1, 0, 1)
+shader_parameter/Velocidad = 20.0
+
+[node name="HUD_Portada" type="CanvasLayer" unique_id=1529060614]
+script = ExtResource("1_vu8cs")
+
+[node name="NicknameLabel" type="LineEdit" parent="." unique_id=392132333]
+offset_left = 165.0
+offset_top = 22.0
+offset_right = 354.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("8_cwy3e")
+theme_override_font_sizes/font_size = 50
+text = "NICKNAME"
+max_length = 25
+expand_to_text_length = true
+script = SubResource("GDScript_861ri")
+
+[node name="TextureButton" type="TextureButton" parent="NicknameLabel" unique_id=495685047]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 7.0
+offset_bottom = 47.0
+texture_normal = ExtResource("10_sabfg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1166757251]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -64.0
+offset_right = 109.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="BotonComenzar" type="Button" parent="VBoxContainer" unique_id=628998628]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_we4ap")
+text = "Jugar"
+
+[node name="BotonTutorial" type="Button" parent="VBoxContainer" unique_id=1331644975]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_we4ap")
+text = "Tutorial"
+
+[node name="BotonMultijugador" type="Button" parent="VBoxContainer" unique_id=2018402976]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_we4ap")
+text = "Multijugador"
+
+[node name="BotonAjustes" type="Button" parent="VBoxContainer" unique_id=-1273067266]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_we4ap")
+text = "Ajustes"
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer" unique_id=571042146]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_we4ap")
+text = "Salir"
+
+[node name="SonidoMuelle" type="AudioStreamPlayer" parent="." unique_id=983269527]
+stream = ExtResource("3_ia2u3")
+bus = &"Efectos de Sonido"
+
+[node name="Nombre" type="Label" parent="." unique_id=1106267694]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -284.0
+offset_top = 124.0
+offset_right = 284.0
+offset_bottom = 188.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("4_lka6y")
+theme_override_font_sizes/font_size = 80
+text = "8-Bit Bros"
+
+[node name="Label10" type="Label" parent="Nombre" unique_id=46413669]
+material = SubResource("ShaderMaterial_sabfg")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 85.0
+offset_right = 251.0
+offset_bottom = 134.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.47, 0.007833326, 1)
+theme_override_fonts/font = ExtResource("7_u4ixw")
+theme_override_font_sizes/font_size = 40
+text = "THE                UPDATE"
+
+[node name="Logo2022Final2" type="Sprite2D" parent="Nombre/Label10" unique_id=502434139]
+position = Vector2(181.99998, 21.999996)
+scale = Vector2(0.3355558, 0.3355558)
+texture = ExtResource("8_q18ci")
+region_enabled = true
+region_rect = Rect2(200, 96, 552, 88)
+
+[node name="Logo2022Final" type="Sprite2D" parent="Nombre/Label10" unique_id=369872856]
+position = Vector2(621.89355, -49.749992)
+scale = Vector2(0.41755337, 0.41755337)
+texture = ExtResource("8_q18ci")
+region_enabled = true
+region_rect = Rect2(0, 0, 192, 188)
+
+[node name="Logo2022Final3" type="Sprite2D" parent="Nombre/Label10" unique_id=265681428]
+position = Vector2(-207, -49.75)
+scale = Vector2(0.41755337, 0.41755337)
+texture = ExtResource("8_q18ci")
+region_enabled = true
+region_rect = Rect2(0, 0, 192, 188)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1407563690]
+position = Vector2(294, 612)
+
+[node name="Label4" type="Label" parent="Node2D" unique_id=1711369221]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 738.0
+offset_top = 6.0
+offset_right = 846.0
+offset_bottom = 22.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("4_lka6y")
+theme_override_font_sizes/font_size = 16
+text = "V. 1.3.1"
+
+[node name="Label5" type="Label" parent="Node2D" unique_id=1927249574]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -289.0
+offset_right = -3.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("4_lka6y")
+theme_override_font_sizes/font_size = 16
+text = "ENVIAR COMENTARIOS:"
+
+[node name="Comentarios" type="TextureButton" parent="Node2D" unique_id=1025656100]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 63.0
+offset_bottom = 38.0
+texture_normal = ExtResource("5_u4ixw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Titulo" type="Label" parent="." unique_id=1859447296]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = 292.0
+offset_right = -358.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_lka6y")
+theme_override_font_sizes/font_size = 20
+text = "VESTIDOR"
+horizontal_alignment = 1
+
+[node name="BotonCampana" type="Button" parent="." unique_id=1133810003]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -25.0
+offset_right = -20.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 26
+text = "🔔"
+
+[node name="Insignia" type="Label" parent="BotonCampana" unique_id=1163584686]
+visible = false
+layout_mode = 0
+offset_left = 28.0
+offset_top = -8.0
+offset_right = 52.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+
+[node name="PanelNotificaciones" parent="." unique_id=1450946083 instance=ExtResource("11_not001")]
+
+[connection signal="pressed" from="NicknameLabel/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonComenzar" to="." method="_on_boton_comenzar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonTutorial" to="." method="_on_boton_tutorial_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonMultijugador" to="." method="_on_boton_multijugador_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonAjustes" to="." method="_on_boton_ajustes_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonSalir" to="." method="_on_boton_salir_pressed"]
+[connection signal="pressed" from="Node2D/Comentarios" to="." method="_on_comentarios_pressed"]
+[connection signal="pressed" from="BotonCampana" to="." method="_on_boton_campana_pressed"]

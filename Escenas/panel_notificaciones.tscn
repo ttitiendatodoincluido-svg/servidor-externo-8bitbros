@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://k5sutax4lw6a"]
+
+[ext_resource type="Script" uid="uid://bbbxmsqqe2vhy" path="res://Codigo/panel_notificaciones.gd" id="1_not001"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="2_not001"]
+
+[node name="PanelNotificaciones" type="Control" unique_id=513416043]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_not001")
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=1952946069]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=2111583322]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -358.0
+offset_top = 72.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel" unique_id=328268178]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Lista" type="VBoxContainer" parent="Panel/ScrollContainer" unique_id=702094114]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="EtiquetaVacio" type="Label" parent="Panel" unique_id=220934347]
+visible = false
+layout_mode = 2
+text = "No tienes notificaciones por ahora."
+autowrap_mode = 2
+
+[node name="Panel2" type="PanelContainer" parent="." unique_id=837030404]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -358.0
+offset_top = 28.0
+offset_bottom = -582.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="BotonCerrar" type="Button" parent="." unique_id=1133380567]
+layout_mode = 0
+offset_left = 1113.0
+offset_top = 31.0
+offset_right = 1146.0
+offset_bottom = 62.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_not001")
+theme_override_font_sizes/font_size = 20
+text = "X"
+
+[node name="Titulo" type="Label" parent="." unique_id=2077769190]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 36.0
+offset_right = 1107.0
+offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("2_not001")
+theme_override_font_sizes/font_size = 20
+text = "🔔 Notificaciones"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="gui_input" from="Fondo" to="." method="_on_fondo_gui_input"]
+[connection signal="pressed" from="BotonCerrar" to="." method="_on_boton_cerrar_pressed"]

@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://x4ffwj5kdy3c"]
+
+[ext_resource type="Theme" uid="uid://dhh7bdv3peqv3" path="res://Recursos/ui/tema.tres" id="1_kfuss"]
+[ext_resource type="Script" uid="uid://ccxklopnyaipg" path="res://Codigo/vestidor.gd" id="2_wj246"]
+[ext_resource type="FontFile" uid="uid://ofseoq86x8ei" path="res://Recursos/fonts/Ttangs Budae Jjigae Bold.otf" id="3_p2k1u"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="4_pllkd"]
+[ext_resource type="Texture2D" uid="uid://dh16g8i3fdry1" path="res://Messages2_22718.png" id="5_wj246"]
+[ext_resource type="PackedScene" uid="uid://60nyywudw284" path="res://Escenas/salircon_esc.tscn" id="6_h7cbc"]
+[ext_resource type="PackedScene" uid="uid://b445ctp4fuepx" path="res://Escenas/cambiar_modo_visualizacion.tscn" id="7_4q5nu"]
+
+[node name="VestidorKo" type="Control" unique_id=1080690816]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_kfuss")
+script = ExtResource("2_wj246")
+ruta_portada = "res://Escenas/portadacoreano.tscn"
+texto_titulo = "탈의실"
+texto_equipada = "장착됨"
+texto_usar = "사용"
+texto_comprar = "구매 🪙%d"
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=882885247]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.070588, 0.07451, 0.101961, 1)
+
+[node name="Titulo" type="Label" parent="." unique_id=27591862]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = 126.0
+offset_right = 160.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_p2k1u")
+theme_override_font_sizes/font_size = 35
+text = "탈의실"
+horizontal_alignment = 1
+
+[node name="ContadorMonedas" type="Label" parent="." unique_id=1086712870]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 28.0
+offset_right = 1080.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_pllkd")
+theme_override_font_sizes/font_size = 22
+text = "🪙 0"
+horizontal_alignment = 2
+
+[node name="BotonVolver" type="Button" parent="." unique_id=1260318016]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 76.0
+offset_bottom = 60.0
+focus_mode = 0
+text = "<"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1948784110]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 166.0
+offset_right = -40.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GrillaSkins" type="GridContainer" parent="ScrollContainer" unique_id=613423247]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 6
+
+[node name="8-bit" type="Label" parent="." unique_id=1526626565]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 37.0
+offset_right = 358.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("4_pllkd")
+theme_override_font_sizes/font_size = 80
+text = "8-Bit Bros"
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=166928099]
+position = Vector2(294, 612)
+
+[node name="E_comentarios" type="Label" parent="Node2D2" unique_id=1353522209]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -284.0
+offset_top = -9.0
+offset_right = 2.0
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_p2k1u")
+theme_override_font_sizes/font_size = 25
+text = "댓글 보내기:"
+
+[node name="ComentariosKO" type="TextureButton" parent="Node2D2" unique_id=1412156245]
+offset_left = -128.0
+offset_top = -26.0
+offset_right = -69.0
+offset_bottom = 33.0
+texture_normal = ExtResource("5_wj246")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Versión" type="Label" parent="Node2D2" unique_id=1399525874]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 717.0
+offset_top = -3.0
+offset_right = 847.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_p2k1u")
+theme_override_font_sizes/font_size = 25
+text = "버전 1.3.1"
+
+[node name="SalirconEsc" parent="." unique_id=420927760 instance=ExtResource("6_h7cbc")]
+
+[node name="CambiarModoVisualizacion" parent="." unique_id=1375843385 instance=ExtResource("7_4q5nu")]
+
+[connection signal="pressed" from="BotonVolver" to="." method="_on_boton_volver_pressed"]
+[connection signal="pressed" from="Node2D2/ComentariosKO" to="." method="_on_comentarios_ko_pressed"]

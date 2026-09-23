@@ -1,0 +1,328 @@
+[gd_scene format=3 uid="uid://g5eqc1vwv3dp"]
+
+[ext_resource type="Script" uid="uid://b1uh6174r0u0o" path="res://Codigo/hud_portada.gd" id="1_u45po"]
+[ext_resource type="AudioStream" uid="uid://cftlc8f31riym" path="res://Recursos/sounds/muelle.wav" id="2_gi3rj"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="3_abvt6"]
+[ext_resource type="Theme" uid="uid://dhh7bdv3peqv3" path="res://Recursos/ui/tema.tres" id="5_5n4cx"]
+[ext_resource type="FontFile" uid="uid://dn58w55njsxog" path="res://Recursos/fonts/Ttangs Budae Jjigae Light.otf" id="5_abvt6"]
+[ext_resource type="Shader" uid="uid://4qgsa2u3gc64" path="res://Materiales/material_powerup.tres" id="6_fgmtm"]
+[ext_resource type="FontFile" uid="uid://ofseoq86x8ei" path="res://Recursos/fonts/Ttangs Budae Jjigae Bold.otf" id="6_oedsc"]
+[ext_resource type="Script" uid="uid://xokl1q7rf0cl" path="res://Codigo/volumen.gd" id="7_vc30j"]
+[ext_resource type="Texture2D" uid="uid://ccmgk4k6fhg7h" path="res://Recursos/Redes_sociales_ko.png" id="8_abvt6"]
+[ext_resource type="Texture2D" uid="uid://dh16g8i3fdry1" path="res://Messages2_22718.png" id="9_6uov8"]
+[ext_resource type="FontFile" uid="uid://howsld5hrex3" path="res://Recursos/fonts/El Chavo Font.ttf" id="10_fi4f2"]
+[ext_resource type="Texture2D" uid="uid://dutbqnpl1sq03" path="res://Recursos/logo_2022_final.png" id="12_abvt6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gi3rj"]
+shader = ExtResource("6_fgmtm")
+shader_parameter/Color = Color(1, 1, 0, 1)
+shader_parameter/Velocidad = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oedsc"]
+shader = ExtResource("6_fgmtm")
+shader_parameter/Color = Color(1, 1, 0, 1)
+shader_parameter/Velocidad = 20.0
+
+[node name="HUD_Portada" type="CanvasLayer" unique_id=2085758254]
+script = ExtResource("1_u45po")
+
+[node name="SonidoMuelle" type="AudioStreamPlayer" parent="." unique_id=232508184]
+stream = ExtResource("2_gi3rj")
+bus = &"Efectos de Sonido"
+
+[node name="Label2" type="Label" parent="." unique_id=1824526757]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 27.0
+offset_right = 358.0
+offset_bottom = 107.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_abvt6")
+theme_override_font_sizes/font_size = 80
+text = "8-Bit Bros"
+
+[node name="Label5" type="Label" parent="." unique_id=1823742794]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -547.0
+offset_top = 203.0
+offset_right = -409.0
+offset_bottom = 224.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_abvt6")
+theme_override_font_sizes/font_size = 20
+text = "볼륨:"
+
+[node name="Label3" type="Label" parent="." unique_id=403707580]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -545.0
+offset_top = 148.0
+offset_right = -389.0
+offset_bottom = 208.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_oedsc")
+theme_override_font_sizes/font_size = 40
+text = "조정됨"
+
+[node name="Label6" type="Label" parent="." unique_id=861539190]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 200.0
+offset_top = 173.0
+offset_right = 361.0
+offset_bottom = 223.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_oedsc")
+theme_override_font_sizes/font_size = 45
+text = "언어"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1074078082]
+offset_left = 36.0
+offset_top = 44.5
+offset_right = 70.0
+offset_bottom = 84.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="BotonSalidaKo" type="Button" parent="VBoxContainer2" unique_id=1688864749]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_5n4cx")
+text = "<"
+
+[node name="HSlider" type="HSlider" parent="." unique_id=605477764]
+z_as_relative = false
+material = SubResource("ShaderMaterial_gi3rj")
+offset_left = 104.0
+offset_top = 211.0
+offset_right = 299.0
+offset_bottom = 232.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("7_vc30j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1992763313]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 116.0
+offset_top = -99.0
+offset_right = 441.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="BotonEspanol" type="Button" parent="VBoxContainer" unique_id=502890926]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_5n4cx")
+theme_override_font_sizes/font_size = 24
+text = "스페인어"
+
+[node name="BotonIngles" type="Button" parent="VBoxContainer" unique_id=201505426]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_5n4cx")
+theme_override_font_sizes/font_size = 24
+text = "영어"
+
+[node name="BotonCoreano" type="Button" parent="VBoxContainer" unique_id=380087393]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_5n4cx")
+theme_override_font_sizes/font_size = 24
+text = "곧 출시 예정
+"
+
+[node name="Boton RedSoc" type="TextureButton" parent="." unique_id=565600377]
+offset_left = 740.0
+offset_top = 420.0
+offset_right = 987.5
+offset_bottom = 585.0
+texture_normal = ExtResource("8_abvt6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BotonAcercaKO" type="Button" parent="." unique_id=1133315201]
+custom_minimum_size = Vector2(0, 40)
+offset_left = 879.0
+offset_top = 126.0
+offset_right = 1081.0
+offset_bottom = 166.0
+focus_mode = 0
+theme = ExtResource("5_5n4cx")
+text = " 8-Bit Bros 소개 "
+
+[node name="Agradecimientos" type="Label" parent="." unique_id=1118485266]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -452.0
+offset_top = 260.0
+offset_right = -107.0
+offset_bottom = 310.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_oedsc")
+theme_override_font_sizes/font_size = 50
+text = "감사의 말"
+horizontal_alignment = 1
+
+[node name="Mensaje" type="Label" parent="Agradecimientos" unique_id=2012060271]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.5
+offset_top = 33.0
+offset_right = 317.5
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("5_abvt6")
+theme_override_font_sizes/font_size = 31
+text = "고도 엔진 덕분이에요. 이 게임 엔진이 없었다면 이 프로젝트는 불가능했을 거예요. 또 우리 사용자분들께도 감사드려요. 그분들의 제안이 없었다면 몇몇 기능은 존재하지 않았을 거예요. 그리고 Academia de Videojuegos에도 감사드려요."
+autowrap_mode = 3
+
+[node name="Label11" type="Label" parent="." unique_id=679684834]
+material = SubResource("ShaderMaterial_oedsc")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -236.0
+offset_top = 112.0
+offset_right = 219.0
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.47, 0.007833326, 1)
+theme_override_fonts/font = ExtResource("10_fi4f2")
+theme_override_font_sizes/font_size = 40
+text = "THE                UPDATE"
+
+[node name="Logo2022Final2" type="Sprite2D" parent="Label11" unique_id=1560496392]
+position = Vector2(181.99998, 21.999996)
+scale = Vector2(0.3355558, 0.3355558)
+texture = ExtResource("12_abvt6")
+region_enabled = true
+region_rect = Rect2(200, 96, 552, 88)
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=1231175405]
+position = Vector2(294, 612)
+
+[node name="E_comentarios" type="Label" parent="Node2D2" unique_id=926031516]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -284.0
+offset_top = -9.0
+offset_right = 2.0
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_oedsc")
+theme_override_font_sizes/font_size = 25
+text = "댓글 보내기:"
+
+[node name="ComentariosKO" type="TextureButton" parent="Node2D2" unique_id=1806413169]
+offset_left = -128.0
+offset_top = -26.0
+offset_right = -69.0
+offset_bottom = 33.0
+texture_normal = ExtResource("9_6uov8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Versión" type="Label" parent="Node2D2" unique_id=440758780]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 717.0
+offset_top = -3.0
+offset_right = 847.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_oedsc")
+theme_override_font_sizes/font_size = 25
+text = "버전 1.3.1"
+
+[connection signal="pressed" from="VBoxContainer2/BotonSalidaKo" to="." method="_on_boton_salida_ko_pressed"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/BotonEspanol" to="." method="_on_boton_espanol_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonIngles" to="." method="_on_boton_ingles_pressed"]
+[connection signal="pressed" from="Boton RedSoc" to="." method="_on_boton_red_soc_pressed"]
+[connection signal="pressed" from="BotonAcercaKO" to="." method="_on_boton_acerca_ko_pressed"]
+[connection signal="pressed" from="Node2D2/ComentariosKO" to="." method="_on_comentarios_ko_pressed"]

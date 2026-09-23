@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b445ctp4fuepx"]
+
+[ext_resource type="Script" uid="uid://bvvh46tnp2dkx" path="res://Codigo/cambiar_modo_visualizacion.gd" id="1_yxn2y"]
+
+[node name="CambiarModoVisualizacion" type="Node"]
+script = ExtResource("1_yxn2y")

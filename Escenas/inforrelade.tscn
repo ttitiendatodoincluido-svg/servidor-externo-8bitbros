@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://clje686mddoen"]
+
+[ext_resource type="Script" uid="uid://b1uh6174r0u0o" path="res://Codigo/hud_portada.gd" id="1_skk7i"]
+[ext_resource type="AudioStream" uid="uid://cftlc8f31riym" path="res://Recursos/sounds/muelle.wav" id="2_hgm2o"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="3_7seis"]
+[ext_resource type="FontFile" uid="uid://dix1k16iunkj5" path="res://Recursos/fonts/HIGHLA2.TTF" id="4_4jntl"]
+[ext_resource type="Theme" uid="uid://dhh7bdv3peqv3" path="res://Recursos/ui/tema.tres" id="5_hcr2c"]
+[ext_resource type="Shader" uid="uid://4qgsa2u3gc64" path="res://Materiales/material_powerup.tres" id="6_yqcf3"]
+[ext_resource type="FontFile" uid="uid://howsld5hrex3" path="res://Recursos/fonts/El Chavo Font.ttf" id="7_4jntl"]
+[ext_resource type="Texture2D" uid="uid://dh16g8i3fdry1" path="res://Messages2_22718.png" id="8_gcqfn"]
+[ext_resource type="Texture2D" uid="uid://dutbqnpl1sq03" path="res://Recursos/logo_2022_final.png" id="9_i77jn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ju4tq"]
+shader = ExtResource("6_yqcf3")
+shader_parameter/Color = Color(1, 1, 0, 1)
+shader_parameter/Velocidad = 20.0
+
+[node name="HUD_Portada" type="CanvasLayer" unique_id=2085758254]
+script = ExtResource("1_skk7i")
+
+[node name="SonidoMuelle" type="AudioStreamPlayer" parent="." unique_id=232508184]
+stream = ExtResource("2_hgm2o")
+bus = &"Efectos de Sonido"
+
+[node name="Label2" type="Label" parent="." unique_id=1824526757]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 27.0
+offset_right = 358.0
+offset_bottom = 107.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_7seis")
+theme_override_font_sizes/font_size = 80
+text = "8-Bit Bros"
+
+[node name="Label3" type="Label" parent="." unique_id=403707580]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -556.0
+offset_top = 110.0
+offset_right = 580.0
+offset_bottom = 587.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("4_4jntl")
+theme_override_font_sizes/font_size = 30
+text = "8-Bit Bros
+8-Bit Bros, desarrollado por Samurai Gamer en Godot Engine, es un juego de aventura y es-  trategia enfocado en la diversión, exploración y desafíos.
+Creado con dedicación y esmero, sin utilizar inteligencia artificial (IA) en su desarrollo.
+Desarrollador: Samurai Gamer
+Distribuidor: Uptodown
+Requisitos mínimos
+Android: Android 5.0+, 1 GB de RAM y 150 MB de almacenamiento.
+Windows: Windows 7 32 bits+, 2 GB de RAM y 200 MB de almacenamiento.
+¡Gracias por jugar 8-Bit Bros!"
+autowrap_mode = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1074078082]
+offset_left = 36.0
+offset_top = 44.5
+offset_right = 70.0
+offset_bottom = 84.5
+theme_override_constants/separation = 5
+
+[node name="BotonAcerca" type="Button" parent="VBoxContainer2" unique_id=1688864749]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_hcr2c")
+text = "<"
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=376904599]
+position = Vector2(294, 612)
+
+[node name="Derechos" type="Label" parent="Node2D2" unique_id=161421398]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 128.0
+offset_top = -12.0
+offset_right = 648.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_7seis")
+theme_override_font_sizes/font_size = 16
+text = "© SAMURÁI GAMER 2025-2026
+TODOS LOS DERECHOS RESERVADOS"
+horizontal_alignment = 1
+
+[node name="Comentarios_e" type="Label" parent="Node2D2" unique_id=1575143364]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -289.0
+offset_right = -3.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_7seis")
+theme_override_font_sizes/font_size = 16
+text = "ENVIAR COMENTARIOS:"
+
+[node name="Comentarios" type="TextureButton" parent="Node2D2" unique_id=720045344]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 63.0
+offset_bottom = 38.0
+texture_normal = ExtResource("8_gcqfn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="N_Version" type="Label" parent="." unique_id=1758745194]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 455.0
+offset_top = 619.0
+offset_right = 563.0
+offset_bottom = 635.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_7seis")
+theme_override_font_sizes/font_size = 16
+text = "V. 1.3.1"
+
+[node name="Nombre_Version" type="Label" parent="." unique_id=447110152]
+material = SubResource("ShaderMaterial_ju4tq")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -236.0
+offset_top = 112.0
+offset_right = 219.0
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.47, 0.007833326, 1)
+theme_override_fonts/font = ExtResource("7_4jntl")
+theme_override_font_sizes/font_size = 40
+text = "THE                UPDATE"
+
+[node name="Logo2022Final2" type="Sprite2D" parent="Nombre_Version" unique_id=1915951754]
+position = Vector2(181.99998, 21.999996)
+scale = Vector2(0.3355558, 0.3355558)
+texture = ExtResource("9_i77jn")
+region_enabled = true
+region_rect = Rect2(200, 96, 552, 88)
+
+[connection signal="pressed" from="VBoxContainer2/BotonAcerca" to="." method="_on_boton_acerca_pressed"]
+[connection signal="pressed" from="Node2D2/Comentarios" to="." method="_on_comentarios_pressed"]

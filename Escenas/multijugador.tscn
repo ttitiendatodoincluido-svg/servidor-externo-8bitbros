@@ -1,0 +1,357 @@
+[gd_scene format=3 uid="uid://iob5y6hgtjys"]
+
+[ext_resource type="Script" uid="uid://b1we0lddosw0f" path="res://Codigo/multijugador.gd" id="1_mp001"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="2_mp001"]
+[ext_resource type="Theme" uid="uid://dhh7bdv3peqv3" path="res://Recursos/ui/tema.tres" id="3_mp001"]
+[ext_resource type="Texture2D" uid="uid://dh16g8i3fdry1" path="res://Messages2_22718.png" id="4_365eh"]
+[ext_resource type="PackedScene" uid="uid://60nyywudw284" path="res://Escenas/salircon_esc.tscn" id="5_xq56a"]
+[ext_resource type="PackedScene" uid="uid://b445ctp4fuepx" path="res://Escenas/cambiar_modo_visualizacion.tscn" id="6_artmo"]
+[ext_resource type="PackedScene" path="res://Escenas/panel_servidor_externo.tscn" id="7_pse001"]
+
+[node name="Multijugador" type="Control" unique_id=997249166]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_mp001")
+script = ExtResource("1_mp001")
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=225209220]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.070588, 0.07451, 0.101961, 1)
+
+[node name="8-bit" type="Label" parent="." unique_id=856555347]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 37.0
+offset_right = 358.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("2_mp001")
+theme_override_font_sizes/font_size = 80
+text = "8-Bit Bros"
+
+[node name="Titulo" type="Label" parent="8-bit" unique_id=58916439]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = 89.0
+offset_right = 355.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_mp001")
+theme_override_font_sizes/font_size = 28
+text = "MULTIJUGADOR — MODO CARRERA"
+horizontal_alignment = 1
+
+[node name="BotonVolver" type="Button" parent="." unique_id=434708579]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 76.0
+offset_bottom = 60.0
+focus_mode = 0
+text = "<"
+
+[node name="SelectorModo" type="HBoxContainer" parent="." unique_id=1000000001]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_top = 130.0
+offset_right = 220.0
+offset_bottom = 168.0
+grow_horizontal = 2
+theme_override_constants/separation = 8
+
+[node name="BotonModoLocal" type="Button" parent="SelectorModo" unique_id=1000000002]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_pressed = true
+focus_mode = 0
+text = "Red local (WiFi)"
+
+[node name="BotonModoExterno" type="Button" parent="SelectorModo" unique_id=1000000003]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+focus_mode = 0
+text = "Servidor externo (Internet)"
+
+[node name="PanelServidorExterno" parent="." unique_id=1000000004 instance=ExtResource("7_pse001")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -140.0
+offset_right = 280.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelCrear" type="VBoxContainer" parent="." unique_id=651005367]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = -133.0
+offset_right = 420.0
+offset_bottom = 227.0
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="EtiquetaCrear" type="Label" parent="PanelCrear" unique_id=1638069732]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mp001")
+theme_override_font_sizes/font_size = 20
+text = "Crear sala"
+
+[node name="EtiquetaJugadores" type="Label" parent="PanelCrear" unique_id=10209755]
+layout_mode = 2
+text = "Cantidad de jugadores (2-10):"
+
+[node name="SelectorJugadores" type="SpinBox" parent="PanelCrear" unique_id=1472583342]
+layout_mode = 2
+min_value = 2.0
+max_value = 10.0
+value = 4.0
+
+[node name="EtiquetaMapa" type="Label" parent="PanelCrear" unique_id=1095673969]
+layout_mode = 2
+text = "Mapa:"
+
+[node name="SelectorMapa" type="OptionButton" parent="PanelCrear" unique_id=731072333]
+layout_mode = 2
+focus_mode = 0
+
+[node name="BotonCrear" type="Button" parent="PanelCrear" unique_id=1141127040]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_mode = 0
+text = "Crear sala"
+
+[node name="EtiquetaIP" type="Label" parent="PanelCrear" unique_id=424284846]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.85, 1, 1)
+autowrap_mode = 2
+
+[node name="BotonCopiarIP" type="Button" parent="PanelCrear" unique_id=1597531825]
+visible = false
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+focus_mode = 0
+text = "Copiar IP y puerto"
+
+[node name="EtiquetaSalaCreada" type="Label" parent="PanelCrear" unique_id=117844101]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.2, 1)
+autowrap_mode = 2
+
+[node name="BotonEmpezar" type="Button" parent="PanelCrear" unique_id=212430079]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_mode = 0
+text = "Empezar carrera"
+
+[node name="PanelUnirse" type="VBoxContainer" parent="." unique_id=1547673196]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -122.0
+offset_right = -60.0
+offset_bottom = 198.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="EtiquetaUnirse" type="Label" parent="PanelUnirse" unique_id=564772725]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mp001")
+theme_override_font_sizes/font_size = 20
+text = "Unirse a sala"
+
+[node name="CampoIP" type="LineEdit" parent="PanelUnirse" unique_id=1931672264]
+layout_mode = 2
+placeholder_text = "IP del host"
+
+[node name="CampoPuerto" type="LineEdit" parent="PanelUnirse" unique_id=721986963]
+layout_mode = 2
+placeholder_text = "Puerto (8910 por defecto)"
+
+[node name="CampoCodigo" type="LineEdit" parent="PanelUnirse" unique_id=2040873148]
+layout_mode = 2
+placeholder_text = "Código de sala (ej: EJ250)"
+
+[node name="BotonUnirse" type="Button" parent="PanelUnirse" unique_id=76179915]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+focus_mode = 0
+text = "Unirse"
+
+[node name="EtiquetaSalasLAN" type="Label" parent="PanelUnirse" unique_id=537570632]
+layout_mode = 2
+text = "Salas encontradas en tu red:"
+
+[node name="ListaSalasLAN" type="VBoxContainer" parent="PanelUnirse" unique_id=1123574572]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="EtiquetaEstado" type="Label" parent="." unique_id=488964521]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+
+[node name="PantallaError" type="ColorRect" parent="." unique_id=960048146]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="Etiqueta" type="Label" parent="PantallaError" unique_id=1483106936]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -90.0
+offset_right = 260.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_mp001")
+theme_override_font_sizes/font_size = 22
+text = "Error de conexión"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BotonReintentar" type="Button" parent="PantallaError" unique_id=105785149]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 10.0
+offset_right = 70.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+text = "Reintentar"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1612793135]
+position = Vector2(294, 612)
+
+[node name="Label4" type="Label" parent="Node2D" unique_id=693847997]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 738.0
+offset_top = 6.0
+offset_right = 846.0
+offset_bottom = 22.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("2_mp001")
+theme_override_font_sizes/font_size = 16
+text = "V. 1.3.1"
+
+[node name="Label5" type="Label" parent="Node2D" unique_id=423279732]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -289.0
+offset_right = -3.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("2_mp001")
+theme_override_font_sizes/font_size = 16
+text = "ENVIAR COMENTARIOS:"
+
+[node name="Comentarios" type="TextureButton" parent="Node2D" unique_id=1384658432]
+offset_left = 4.0
+offset_top = -21.0
+offset_right = 63.0
+offset_bottom = 38.0
+texture_normal = ExtResource("4_365eh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SalirconEsc" parent="." unique_id=2002621019 instance=ExtResource("5_xq56a")]
+
+[node name="CambiarModoVisualizacion" parent="." unique_id=656581232 instance=ExtResource("6_artmo")]
+
+[connection signal="toggled" from="SelectorModo/BotonModoLocal" to="." method="_on_boton_modo_local_toggled"]
+[connection signal="toggled" from="SelectorModo/BotonModoExterno" to="." method="_on_boton_modo_externo_toggled"]
+[connection signal="pressed" from="BotonVolver" to="." method="_on_boton_volver_pressed"]
+[connection signal="pressed" from="PanelCrear/BotonCrear" to="." method="_on_boton_crear_pressed"]
+[connection signal="pressed" from="PanelCrear/BotonCopiarIP" to="." method="_on_boton_copiar_ip_pressed"]
+[connection signal="pressed" from="PanelCrear/BotonEmpezar" to="." method="_on_boton_empezar_pressed"]
+[connection signal="pressed" from="PanelUnirse/BotonUnirse" to="." method="_on_boton_unirse_pressed"]
+[connection signal="pressed" from="PantallaError/BotonReintentar" to="." method="_on_boton_reintentar_pressed"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://60nyywudw284"]
+
+[ext_resource type="Script" uid="uid://dtw44kxtoc5et" path="res://Codigo/salircon_esc.gd" id="1_hkn2p"]
+
+[node name="SalirconEsc" type="Node"]
+script = ExtResource("1_hkn2p")

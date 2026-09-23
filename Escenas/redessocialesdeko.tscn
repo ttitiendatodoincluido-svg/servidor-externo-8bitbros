@@ -1,0 +1,381 @@
+[gd_scene format=3 uid="uid://tv4dmqarq7wc"]
+
+[ext_resource type="Script" uid="uid://b1uh6174r0u0o" path="res://Codigo/hud_portada.gd" id="1_yied8"]
+[ext_resource type="AudioStream" uid="uid://cftlc8f31riym" path="res://Recursos/sounds/muelle.wav" id="2_qgw40"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="3_r6ft4"]
+[ext_resource type="Theme" uid="uid://dhh7bdv3peqv3" path="res://Recursos/ui/tema.tres" id="4_s4qb4"]
+[ext_resource type="Texture2D" uid="uid://ck51w1eh373my" path="res://Recursos/redes_sociales/youtube.webp" id="5_vcf8u"]
+[ext_resource type="Texture2D" uid="uid://35ylpcss0xqi" path="res://botones/uptodown.webp" id="6_ajy4r"]
+[ext_resource type="FontFile" uid="uid://ofseoq86x8ei" path="res://Recursos/fonts/Ttangs Budae Jjigae Bold.otf" id="6_r6ft4"]
+[ext_resource type="Texture2D" uid="uid://du4skta152rb3" path="res://Recursos/ui/logo-Gmail-1.png" id="7_slvx7"]
+[ext_resource type="Texture2D" uid="uid://dh16g8i3fdry1" path="res://Messages2_22718.png" id="8_hv4cp"]
+[ext_resource type="Shader" uid="uid://4qgsa2u3gc64" path="res://Materiales/material_powerup.tres" id="9_fikuy"]
+[ext_resource type="FontFile" uid="uid://howsld5hrex3" path="res://Recursos/fonts/El Chavo Font.ttf" id="10_4wga0"]
+[ext_resource type="Texture2D" uid="uid://dutbqnpl1sq03" path="res://Recursos/logo_2022_final.png" id="11_ufay6"]
+[ext_resource type="Texture2D" uid="uid://br8j41irvs264" path="res://botones/whatsapp.png" id="13_s4qb4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ch0p1"]
+shader = ExtResource("9_fikuy")
+shader_parameter/Color = Color(1, 1, 0, 1)
+shader_parameter/Velocidad = 20.0
+
+[node name="HUD_Portada" type="CanvasLayer" unique_id=459904110]
+script = ExtResource("1_yied8")
+
+[node name="SonidoMuelle" type="AudioStreamPlayer" parent="." unique_id=1098241451]
+stream = ExtResource("2_qgw40")
+bus = &"Efectos de Sonido"
+
+[node name="Label2" type="Label" parent="." unique_id=1310453112]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 37.0
+offset_right = 358.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_r6ft4")
+theme_override_font_sizes/font_size = 80
+text = "8-Bit Bros"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=2130357431]
+offset_left = 36.0
+offset_top = 44.5
+offset_right = 70.0
+offset_bottom = 84.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="BotonSalidaRedes" type="Button" parent="VBoxContainer2" unique_id=1661668063]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_s4qb4")
+text = "<"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=147308244]
+position = Vector2(294, 612)
+
+[node name="Youtube" type="TextureButton" parent="Node2D" unique_id=2048227951]
+offset_left = -309.0
+offset_top = -473.0
+offset_right = -8.0
+offset_bottom = -172.0
+texture_normal = ExtResource("5_vcf8u")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label6" type="Label" parent="Node2D" unique_id=1316093007]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.0
+offset_top = -351.0
+offset_right = 307.0
+offset_bottom = -300.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_r6ft4")
+theme_override_font_sizes/font_size = 50
+text = "Youtube"
+
+[node name="Label12" type="Label" parent="Node2D" unique_id=805096428]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 461.0
+offset_top = -93.0
+offset_right = 827.0
+offset_bottom = -42.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_r6ft4")
+theme_override_font_sizes/font_size = 35
+text = "팔로우해!"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="Node2D" unique_id=2032223315]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = -286.0
+offset_right = 309.0
+offset_bottom = -235.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_r6ft4")
+theme_override_font_sizes/font_size = 35
+text = "구독해!"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="Node2D" unique_id=37525842]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = -179.0
+offset_right = 195.0
+offset_bottom = -119.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_r6ft4")
+theme_override_font_sizes/font_size = 50
+text = "기술 지원"
+
+[node name="Label5" type="Label" parent="Node2D" unique_id=655468585]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_top = -451.0
+offset_right = -42.0
+offset_bottom = -416.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_r6ft4")
+theme_override_font_sizes/font_size = 25
+text = "소셜 미디어:"
+
+[node name="Label8" type="Label" parent="Node2D" unique_id=1702735489]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 487.0
+offset_top = -445.0
+offset_right = 711.0
+offset_bottom = -410.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_r6ft4")
+theme_override_font_sizes/font_size = 25
+text = "게임 다운로드:"
+
+[node name="UptodownW" type="TextureButton" parent="Node2D" unique_id=1397400975]
+offset_left = 458.0
+offset_top = -407.0
+offset_right = 527.0
+offset_bottom = -338.0
+texture_normal = ExtResource("6_ajy4r")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="UptodownA" type="TextureButton" parent="Node2D" unique_id=1543971941]
+offset_left = 458.0
+offset_top = -329.0
+offset_right = 527.0
+offset_bottom = -260.0
+texture_normal = ExtResource("6_ajy4r")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label9" type="Label" parent="Node2D" unique_id=1717019276]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 543.0
+offset_top = -381.0
+offset_right = 693.0
+offset_bottom = -336.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_r6ft4")
+theme_override_font_sizes/font_size = 20
+text = "Windows
+"
+
+[node name="Label10" type="Label" parent="Node2D" unique_id=966056790]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 543.0
+offset_top = -303.0
+offset_right = 693.0
+offset_bottom = -258.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_r6ft4")
+theme_override_font_sizes/font_size = 20
+text = "Android
+"
+
+[node name="Gmail" type="TextureButton" parent="Node2D" unique_id=608024238]
+offset_left = -363.0
+offset_top = -260.0
+offset_right = 51.222076
+offset_bottom = -27.0
+texture_normal = ExtResource("7_slvx7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Nombre_Version" type="Label" parent="." unique_id=1888649760]
+material = SubResource("ShaderMaterial_ch0p1")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -236.0
+offset_top = 117.0
+offset_right = 219.0
+offset_bottom = 166.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.47, 0.007833326, 1)
+theme_override_fonts/font = ExtResource("10_4wga0")
+theme_override_font_sizes/font_size = 40
+text = "THE                UPDATE"
+
+[node name="Logo2022Final2" type="Sprite2D" parent="Nombre_Version" unique_id=1993830044]
+position = Vector2(181.99998, 21.999996)
+scale = Vector2(0.3355558, 0.3355558)
+texture = ExtResource("11_ufay6")
+region_enabled = true
+region_rect = Rect2(200, 96, 552, 88)
+
+[node name="Whatsapp" type="TextureButton" parent="." unique_id=1069256704]
+anchors_preset = -1
+anchor_right = 0.05
+anchor_bottom = 0.031000001
+offset_left = 538.0
+offset_top = 387.0
+offset_right = 669.4
+offset_bottom = 557.50696
+texture_normal = ExtResource("13_s4qb4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label11" type="Label" parent="Whatsapp" unique_id=442801668]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 122.5
+offset_top = 71.0
+offset_right = 522.5
+offset_bottom = 122.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_r6ft4")
+theme_override_font_sizes/font_size = 45
+text = "Whatsapp"
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=1795820590]
+position = Vector2(294, 612)
+
+[node name="E_comentarios" type="Label" parent="Node2D2" unique_id=1790928576]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -284.0
+offset_top = -9.0
+offset_right = 2.0
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_r6ft4")
+theme_override_font_sizes/font_size = 25
+text = "댓글 보내기:"
+
+[node name="ComentariosKO" type="TextureButton" parent="Node2D2" unique_id=776974330]
+offset_left = -128.0
+offset_top = -26.0
+offset_right = -69.0
+offset_bottom = 33.0
+texture_normal = ExtResource("8_hv4cp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Versión" type="Label" parent="Node2D2" unique_id=1733252733]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 717.0
+offset_top = -3.0
+offset_right = 847.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("6_r6ft4")
+theme_override_font_sizes/font_size = 25
+text = "버전 1.3.1"
+
+[connection signal="pressed" from="VBoxContainer2/BotonSalidaRedes" to="." method="_on_boton_salida_redes_pressed"]
+[connection signal="pressed" from="Node2D/Youtube" to="." method="_on_youtube_pressed"]
+[connection signal="pressed" from="Node2D/UptodownW" to="." method="_on_uptodown_w_pressed"]
+[connection signal="pressed" from="Node2D/UptodownA" to="." method="_on_uptodown_a_pressed"]
+[connection signal="pressed" from="Node2D/Gmail" to="." method="_on_gmail_pressed"]
+[connection signal="pressed" from="Whatsapp" to="." method="_on_whatsapp_pressed"]
+[connection signal="pressed" from="Node2D2/ComentariosKO" to="." method="_on_comentarios_ko_pressed"]

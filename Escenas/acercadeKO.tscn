@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://bdwseadqa27b8"]
+
+[ext_resource type="Script" uid="uid://b1uh6174r0u0o" path="res://Codigo/hud_portada.gd" id="1_rxgmf"]
+[ext_resource type="AudioStream" uid="uid://cftlc8f31riym" path="res://Recursos/sounds/muelle.wav" id="2_37pj8"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="3_363ne"]
+[ext_resource type="Theme" uid="uid://dhh7bdv3peqv3" path="res://Recursos/ui/tema.tres" id="5_sppy0"]
+[ext_resource type="Texture2D" uid="uid://cwboov2b7sv4y" path="res://Recursos/Terminos de uso ko.png" id="6_6h0lf"]
+[ext_resource type="FontFile" uid="uid://ofseoq86x8ei" path="res://Recursos/fonts/Ttangs Budae Jjigae Bold.otf" id="7_ne2ca"]
+[ext_resource type="FontFile" uid="uid://howsld5hrex3" path="res://Recursos/fonts/El Chavo Font.ttf" id="7_qyr06"]
+[ext_resource type="Texture2D" uid="uid://bkxmo3m2b326o" path="res://Recursos/79d077ee-e7f5-4389-8331-eb860a96fdf1.png" id="8_6h0lf"]
+[ext_resource type="Shader" uid="uid://4qgsa2u3gc64" path="res://Materiales/material_powerup.tres" id="9_vpu24"]
+[ext_resource type="Texture2D" uid="uid://dh16g8i3fdry1" path="res://Messages2_22718.png" id="10_py3jc"]
+[ext_resource type="Texture2D" uid="uid://dutbqnpl1sq03" path="res://Recursos/logo_2022_final.png" id="11_ne2ca"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6h0lf"]
+shader = ExtResource("9_vpu24")
+shader_parameter/Color = Color(1, 1, 0, 1)
+shader_parameter/Velocidad = 20.0
+
+[node name="HUD_Portada" type="CanvasLayer" unique_id=2085758254]
+script = ExtResource("1_rxgmf")
+
+[node name="SonidoMuelle" type="AudioStreamPlayer" parent="." unique_id=232508184]
+stream = ExtResource("2_37pj8")
+bus = &"Efectos de Sonido"
+
+[node name="Label2" type="Label" parent="." unique_id=1824526757]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 27.0
+offset_right = 358.0
+offset_bottom = 107.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_363ne")
+theme_override_font_sizes/font_size = 80
+text = "8-Bit Bros"
+
+[node name="Label3" type="Label" parent="." unique_id=403707580]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -562.0
+offset_top = 167.0
+offset_right = 542.0
+offset_bottom = 662.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("7_ne2ca")
+theme_override_font_sizes/font_size = 30
+text = "8-Bit Bros에 대하여
+제작자: Matias Caballero Benavides
+버전 1.3.1
+메타 음악 출처: Jingle_Win00.wav by Little
+RobotSoundFactory https://freesound.
+org/s/273033/ -- 라이선스: 저작자 표시 4.0
+텍스처와 배경 음악 출처: Brackeys Platformer Assets
+다운로드 링크: https://brackeysgames.itch.io/brackeys-platformer-bundle
+8-Bit Bros의 콘텐츠를 무단으로 사용할 경우저작권 위반으로 소송을 당할 수 있습니다!
+"
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1074078082]
+offset_left = 36.0
+offset_top = 44.5
+offset_right = 70.0
+offset_bottom = 84.5
+theme_override_constants/separation = 5
+
+[node name="BotonSalidaRedesKO" type="Button" parent="VBoxContainer2" unique_id=1688864749]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("5_sppy0")
+text = "<"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1505257260]
+position = Vector2(814, 132)
+
+[node name="TerminosdeusoKO" type="TextureButton" parent="Node2D" unique_id=890005303]
+offset_left = 2.0
+offset_top = 73.0
+offset_right = 317.58203
+offset_bottom = 139.0
+texture_normal = ExtResource("6_6h0lf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BotonInforRelaKO" type="Button" parent="Node2D" unique_id=1961812871]
+custom_minimum_size = Vector2(0, 40)
+offset_left = -11.0
+offset_top = 150.0
+offset_right = 327.0
+offset_bottom = 205.0
+focus_mode = 0
+theme = ExtResource("5_sppy0")
+theme_override_fonts/font = ExtResource("7_ne2ca")
+theme_override_font_sizes/font_size = 30
+text = "관련 정보"
+
+[node name="PoliticaKO" type="TextureButton" parent="Node2D" unique_id=233340483]
+offset_left = 1.0
+offset_right = 317.0
+offset_bottom = 68.0
+texture_normal = ExtResource("8_6h0lf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label11" type="Label" parent="." unique_id=1161120904]
+material = SubResource("ShaderMaterial_6h0lf")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -236.0
+offset_top = 112.0
+offset_right = 219.0
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.47, 0.007833326, 1)
+theme_override_fonts/font = ExtResource("7_qyr06")
+theme_override_font_sizes/font_size = 40
+text = "THE                UPDATE"
+
+[node name="Logo2022Final2" type="Sprite2D" parent="Label11" unique_id=2047750402]
+position = Vector2(181.99998, 21.999996)
+scale = Vector2(0.3355558, 0.3355558)
+texture = ExtResource("11_ne2ca")
+region_enabled = true
+region_rect = Rect2(200, 96, 552, 88)
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=1964342065]
+position = Vector2(294, 612)
+
+[node name="Derechos" type="Label" parent="Node2D2" unique_id=542514338]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 128.0
+offset_top = -23.0
+offset_right = 648.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_363ne")
+theme_override_font_sizes/font_size = 16
+text = "© SAMURÁI GAMER 2025-2026
+모든 권리 보유"
+horizontal_alignment = 1
+
+[node name="E_comentarios" type="Label" parent="Node2D2" unique_id=1013043769]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -284.0
+offset_top = -9.0
+offset_right = 2.0
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("7_ne2ca")
+theme_override_font_sizes/font_size = 25
+text = "댓글 보내기:"
+
+[node name="ComentariosKO" type="TextureButton" parent="Node2D2" unique_id=1790845674]
+offset_left = -128.0
+offset_top = -26.0
+offset_right = -69.0
+offset_bottom = 33.0
+texture_normal = ExtResource("10_py3jc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Versión" type="Label" parent="Node2D2" unique_id=226559125]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 717.0
+offset_top = -3.0
+offset_right = 847.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("7_ne2ca")
+theme_override_font_sizes/font_size = 25
+text = "버전 1.3.1"
+
+[connection signal="pressed" from="VBoxContainer2/BotonSalidaRedesKO" to="." method="_on_boton_salida_redes_ko_pressed"]
+[connection signal="pressed" from="Node2D/TerminosdeusoKO" to="." method="_on_terminosdeuso_ko_pressed"]
+[connection signal="pressed" from="Node2D/BotonInforRelaKO" to="." method="_on_boton_infor_rela_ko_pressed"]
+[connection signal="pressed" from="Node2D/PoliticaKO" to="." method="_on_politica_ko_pressed"]
+[connection signal="pressed" from="Node2D2/ComentariosKO" to="." method="_on_comentarios_ko_pressed"]

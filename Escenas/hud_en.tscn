@@ -1,0 +1,345 @@
+[gd_scene format=3 uid="uid://dtp2f0rvi4ltk"]
+
+[ext_resource type="Script" uid="uid://im1l06o2mky0" path="res://Codigo/hud.gd" id="1_v7vqq"]
+[ext_resource type="Texture2D" uid="uid://bhx6qiq5biq5x" path="res://Recursos/sprites/coin.png" id="2_o8y13"]
+[ext_resource type="FontFile" uid="uid://bibhdscnpgws8" path="res://Recursos/fonts/PixelOperator8-Bold.ttf" id="3_2xkk0"]
+[ext_resource type="Shader" uid="uid://4qgsa2u3gc64" path="res://Materiales/material_powerup.tres" id="3_o8y13"]
+[ext_resource type="Theme" uid="uid://dhh7bdv3peqv3" path="res://Recursos/ui/tema.tres" id="4_7tq3p"]
+[ext_resource type="Texture2D" uid="uid://dw06ngua3kqoo" path="res://botones/izquierda.png" id="6_2xkk0"]
+[ext_resource type="Texture2D" uid="uid://cs6j1qfqmt2eh" path="res://botones/saltar.png" id="7_7tq3p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xkk0"]
+shader = ExtResource("3_o8y13")
+shader_parameter/Color = Color(1, 1, 0, 1)
+shader_parameter/Velocidad = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7tq3p"]
+shader = ExtResource("3_o8y13")
+shader_parameter/Color = Color(1, 1, 0, 1)
+shader_parameter/Velocidad = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o170d"]
+atlas = ExtResource("2_o8y13")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7tq3p"]
+load_path = "res://.godot/imported/izquierda.png-d10869ee46f32331c889a681ab765e04.ctex"
+
+[node name="HUDIn" type="CanvasLayer" unique_id=2088210024]
+script = ExtResource("1_v7vqq")
+
+[node name="BotonExitPage" type="Button" parent="." unique_id=278841333]
+custom_minimum_size = Vector2(0, 40)
+anchors_preset = -1
+anchor_right = 0.037
+anchor_bottom = 0.143
+offset_left = 22.0
+offset_top = 31.0
+offset_right = 10.376
+offset_bottom = -21.664
+focus_mode = 0
+theme = ExtResource("4_7tq3p")
+text = "<"
+
+[node name="Label2" type="Label" parent="." unique_id=1133839856]
+material = SubResource("ShaderMaterial_2xkk0")
+offset_left = 1002.0
+offset_top = 39.0
+offset_right = 1034.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0.968627, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_2xkk0")
+theme_override_font_sizes/font_size = 32
+text = "x"
+
+[node name="ContadorMonedas2" type="Label" parent="." unique_id=48388934]
+material = SubResource("ShaderMaterial_7tq3p")
+use_parent_material = true
+offset_left = 1033.0
+offset_top = 32.0
+offset_right = 1075.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.968627, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_2xkk0")
+theme_override_font_sizes/font_size = 42
+text = "0"
+
+[node name="TexturaMoneda" type="TextureRect" parent="." unique_id=1185272540]
+offset_left = 942.0
+offset_top = 20.0
+offset_right = 1006.0
+offset_bottom = 84.0
+texture = SubResource("AtlasTexture_o170d")
+
+[node name="Label3" type="Label" parent="." unique_id=2017703321]
+offset_left = 1002.0
+offset_top = 39.0
+offset_right = 1034.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0.966667, 1, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_2xkk0")
+theme_override_font_sizes/font_size = 32
+text = "x"
+
+[node name="ContadorMonedas" type="Label" parent="." unique_id=1515519889]
+offset_left = 1033.0
+offset_top = 32.0
+offset_right = 1075.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_2xkk0")
+theme_override_font_sizes/font_size = 42
+text = "0"
+
+[node name="ContadorVidas" type="Label" parent="." unique_id=-1273119541]
+offset_left = 815.0
+offset_top = 30.0
+offset_right = 915.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_2xkk0")
+theme_override_font_sizes/font_size = 42
+text = "❤️3"
+
+[node name="Cronometro" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 44.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_2xkk0")
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+text = "⏱ 00:00"
+
+[node name="PantallaPerdiste" type="ColorRect" parent="." unique_id=-1273119540]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75)
+
+[node name="Etiqueta" type="Label" parent="PantallaPerdiste" unique_id=-1273119539]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -90.0
+offset_right = 220.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.15, 0.15, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_2xkk0")
+theme_override_font_sizes/font_size = 40
+text = "YOU LOST!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonSalirDerrota" type="Button" parent="PantallaPerdiste" unique_id=-1273119538]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("4_7tq3p")
+text = "Exit"
+
+[node name="TemporizadorPerdiste" type="Timer" parent="PantallaPerdiste" unique_id=-1273119537]
+wait_time = 5.0
+one_shot = true
+
+[node name="PantallaResultados" type="ColorRect" parent="." unique_id=-1273067276]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="Titulo" type="Label" parent="PantallaResultados" unique_id=-1273067275]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 40.0
+offset_right = 200.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_2xkk0")
+theme_override_font_sizes/font_size = 30
+text = "🏁 RACE 🏁"
+horizontal_alignment = 1
+
+[node name="ListaResultados" type="VBoxContainer" parent="PantallaResultados" unique_id=-1273067274]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="BotonVolverLobby" type="Button" parent="PantallaResultados" unique_id=-1273067273]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme = ExtResource("4_7tq3p")
+text = "Back to lobby"
+
+[node name="PantallaVictoria" type="ColorRect" parent="." unique_id=-1273067266]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.15, 0.05, 0.85)
+
+[node name="Titulo" type="Label" parent="PantallaVictoria" unique_id=-1273067265]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -60.0
+offset_right = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.3, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_2xkk0")
+theme_override_font_sizes/font_size = 40
+text = "🏆 YOU WON! 🏆"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonVolverLobbyVictoria" type="Button" parent="PantallaVictoria" unique_id=-1273067264]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 20.0
+offset_right = 80.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme = ExtResource("4_7tq3p")
+text = "Back to lobby"
+
+[node name="PantallaConexionPerdida" type="ColorRect" parent="." unique_id=3021900060]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.85)
+
+[node name="Etiqueta" type="Label" parent="PantallaConexionPerdida" unique_id=3021900061]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -60.0
+offset_right = 220.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.4, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_2xkk0")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+text = "Lost connection with the host."
+
+[node name="Botones" type="CanvasLayer" parent="." unique_id=914224720]
+
+[node name="Izquierda" type="TouchScreenButton" parent="Botones" unique_id=1688444385]
+position = Vector2(23, 415.99994)
+scale = Vector2(1.0980393, 1.0980393)
+texture_normal = ExtResource("6_2xkk0")
+texture_pressed = SubResource("CompressedTexture2D_7tq3p")
+action = "mover_izquierda"
+
+[node name="Izquierda2" type="TouchScreenButton" parent="Botones" unique_id=427467216]
+position = Vector2(470.00003, 641)
+rotation = -3.13603
+scale = Vector2(1.098, 1.098)
+texture_normal = ExtResource("6_2xkk0")
+action = "mover_derecha"
+
+[node name="Saltar" type="TouchScreenButton" parent="Botones" unique_id=686800496]
+position = Vector2(901, 425)
+rotation = -0.0016610622
+scale = Vector2(0.39712816, 0.40117761)
+texture_normal = ExtResource("7_7tq3p")
+action = "saltar"
+
+[connection signal="pressed" from="BotonExitPage" to="." method="_on_boton_exit_page_pressed"]
+[connection signal="pressed" from="PantallaPerdiste/BotonSalirDerrota" to="." method="_on_boton_exit_page_pressed"]
+[connection signal="timeout" from="PantallaPerdiste/TemporizadorPerdiste" to="." method="_on_boton_exit_page_pressed"]
+[connection signal="pressed" from="PantallaResultados/BotonVolverLobby" to="." method="_on_boton_exit_page_pressed"]
+[connection signal="pressed" from="PantallaVictoria/BotonVolverLobbyVictoria" to="." method="_on_boton_exit_page_pressed"]
+[connection signal="pressed" from="Botones/Izquierda" to="." method="_on_izquierda_pressed"]
+[connection signal="pressed" from="Botones/Izquierda2" to="." method="_on_izquierda_2_pressed"]
+[connection signal="pressed" from="Botones/Saltar" to="." method="_on_saltar_pressed"]

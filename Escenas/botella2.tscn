@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cuxc2w2je3pcb"]
+
+[ext_resource type="Texture2D" uid="uid://cqngf2ymtc3ul" path="res://Recursos/sprites/world_tileset.png" id="1_aewa2"]
+[ext_resource type="Script" uid="uid://dalh7kf48318o" path="res://Codigo/botella.gd" id="2_ada3q"]
+[ext_resource type="AudioStream" uid="uid://m0x2ihgl5244" path="res://Recursos/sounds/power_up.wav" id="3_c5xhe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xey1t"]
+size = Vector2(8, 14)
+
+[node name="Botella2" type="Sprite2D" unique_id=1414973975]
+texture = ExtResource("1_aewa2")
+region_enabled = true
+region_rect = Rect2(20, 114, 8, 14)
+script = ExtResource("2_ada3q")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1802103250]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1800906069]
+shape = SubResource("RectangleShape2D_xey1t")
+
+[node name="SonidoPowerup" type="AudioStreamPlayer" parent="." unique_id=1897357952]
+stream = ExtResource("3_c5xhe")
+bus = &"Efectos de Sonido"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="SonidoPowerup" to="." method="_on_sonido_powerup_finished"]
