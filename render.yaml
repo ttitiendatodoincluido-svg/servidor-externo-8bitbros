@@ -1,0 +1,21 @@
+# Blueprint de Render (https://render.com) para el servidor dedicado
+# externo de 8-Bit Bros — Chavo.
+#
+# Uso: en el dashboard de Render, "New +" > "Blueprint", apuntá al
+# repositorio que contiene esta carpeta y Render va a detectar este
+# archivo solo. También podés crear el servicio a mano ("New +" >
+# "Web Service", tipo Docker, Dockerfile en servidor_externo/Dockerfile)
+# sin usar este blueprint; es exactamente lo mismo.
+
+services:
+  - type: web
+    name: 8-bit-bros-servidor
+    runtime: docker
+    dockerfilePath: ./servidor_externo/Dockerfile
+    dockerContext: ./servidor_externo
+    plan: free
+    region: oregon
+    autoDeployTrigger: commit
+    envVars:
+      - key: SDL_AUDIODRIVER
+        value: dummy
