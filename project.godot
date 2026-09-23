@@ -1,0 +1,312 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="8-Bit Bros"
+config/description="Sumérgete en la experiencia de 8-Bit Bros, un título de Aventura diseñado para que cada partida sea diferente y emocionante.
+
+Explora escenarios, supera retos y pon a prueba tus habilidades mientras disfrutas de un mundo lleno de niveles y diversión sin fin.
+
+Características principales:
+
+✅ Gráficos envolventes y optimizados para móviles.
+
+✅ Controles simples e intuitivos.
+
+✅ Desafíos progresivos que aumentan la dificultad.
+
+✅ Un jugador y offline.
+
+✅ Compatible con una amplia gama de dispositivos con Windows.
+
+Ya sea que quieras jugar unos minutos o perderte durante horas, 8-Bit Bros está listo para acompañarte en todo momento.
+
+📲 ¡Descárgalo ahora y empieza la aventura!"
+config/version="1.3"
+run/main_scene="uid://0r0x2ppuhws8"
+config/features=PackedStringArray("4.8", "Forward Plus")
+boot_splash/image="uid://bbms2vwq7s7ym"
+config/icon="uid://c77k2r8w0ljh"
+config/windows_native_icon="res://logo-8-bit.ico"
+boot_splash/minimum_display_time=2000
+
+[audio]
+
+buses/default_bus_layout="uid://qlpe04dvoyfg"
+
+[autoload]
+
+Musica="*res://Escenas/musica.tscn"
+Red="*res://Codigo/red.gd"
+Carrera="*res://Codigo/carrera.gd"
+Guardado="*res://Codigo/guardado.gd"
+Skins="*res://Codigo/skins.gd"
+Notificaciones="*res://Codigo/notificaciones.gd"
+VerificadorActualizaciones="*res://Codigo/verificador_actualizaciones.gd"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
+
+[input]
+
+saltar={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 32,
+"key_label": 0,
+"unicode": 32,
+"location": 0,
+"echo": false,
+"script": null
+), Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 4194320,
+"key_label": 0,
+"unicode": 0,
+"location": 0,
+"echo": false,
+"script": null
+), Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 87,
+"key_label": 0,
+"unicode": 119,
+"location": 0,
+"echo": false,
+"script": null
+)]
+}
+mover_derecha={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 4194321,
+"key_label": 0,
+"unicode": 0,
+"location": 0,
+"echo": false,
+"script": null
+), Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 68,
+"key_label": 0,
+"unicode": 100,
+"location": 0,
+"echo": false,
+"script": null
+)]
+}
+mover_izquierda={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 4194319,
+"key_label": 0,
+"unicode": 0,
+"location": 0,
+"echo": false,
+"script": null
+), Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 65,
+"key_label": 0,
+"unicode": 97,
+"location": 0,
+"echo": false,
+"script": null
+)]
+}
+correr={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 4194326,
+"key_label": 0,
+"unicode": 0,
+"location": 1,
+"echo": false,
+"script": null
+), Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 4194325,
+"key_label": 0,
+"unicode": 0,
+"location": 1,
+"echo": false,
+"script": null
+)]
+}
+salir={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 4194305,
+"key_label": 0,
+"unicode": 0,
+"location": 0,
+"echo": false,
+"script": null
+)]
+}
+tamano={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 4194342,
+"key_label": 0,
+"unicode": 0,
+"location": 0,
+"echo": false,
+"script": null
+), Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 70,
+"key_label": 0,
+"unicode": 102,
+"location": 0,
+"echo": false,
+"script": null
+)]
+}
+portada={
+"deadzone": 0.2,
+"events": []
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/locale_filter_mode=1
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
